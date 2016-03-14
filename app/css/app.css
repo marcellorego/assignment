@@ -29,6 +29,15 @@ body {
   border: 0;
 }
 
+.navbar-brand {
+    padding-top: 0;
+}
+
+.navbar-brand img {
+    max-width:144px;
+    max-height:50px
+}
+
 /*
  * Sidebar
  */
