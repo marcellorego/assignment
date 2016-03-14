@@ -1,0 +1,17 @@
+.path--background {
+    fill: #FFFFFF;
+    stroke: #988a8a;
+    stroke-width: 1px;
+}
+
+.path--foreground {
+    fill: #0000ff;
+    
+}
+
+.label {
+    font: 20px sans-serif;
+    text-anchor: middle;
+    color: #4E525B;
+    text-align: center;
+}

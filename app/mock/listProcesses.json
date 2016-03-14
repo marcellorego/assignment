@@ -1,0 +1,88 @@
+[{
+    "active":true,
+    "processNumber": 0,
+    "cpu" : 35,
+    "status": true,
+    "instances" : 4,
+    "memory" : {
+        "total" : 128,
+        "used" : 80
+    },
+    "restarts" : [
+        1457766534102,
+        1457366534102
+    ],
+    "data" : {
+        "dataset0": [
+          {"x": 0, "val": 0},
+          {"x": 1, "val": 0.993},
+          {"x": 2, "val": 1.947},
+          {"x": 3, "val": 2.823},
+          {"x": 4, "val": 5.587},
+          {"x": 5, "val": 2.207},
+          {"x": 6, "val": 4.66},
+          {"x": 7, "val": 3.927}
+        ]
+      }    
+}, {
+    "active":true,
+    "processNumber": 1,
+    "cpu" : 50,
+    "status": false,
+    "instances" : 1,
+    "memory" : {
+        "total" : 128,
+        "used" : 32
+    },
+    "restarts" : [
+        1457366534102
+    ],
+    "data" : {
+        "dataset0": [
+          {"x": 0, "val": 0},
+          {"x": 1, "val": 0.993},
+          {"x": 2, "val": 1.947},
+          {"x": 3, "val": 5.823},
+          {"x": 4, "val": 5.587},
+          {"x": 5, "val": 2.207},
+          {"x": 6, "val": 4.66},
+          {"x": 7, "val": 3.927}
+        ]
+      }
+}, {
+    "processNumber": 2,
+    "cpu" : 70,
+    "status": false,
+    "instances" : 0,
+    "memory" : {
+        "total" : 128,
+        "used" : 0
+    },
+    "restarts" : [
+        
+    ]
+}, {
+    "processNumber": 3,
+    "cpu" : 70,
+    "status": false,
+    "instances" : 0,
+    "memory" : {
+        "total" : 128,
+        "used" : 0
+    },
+    "restarts" : [
+        
+    ]
+}, {
+    "processNumber": 4,
+    "cpu" : 70,
+    "status": false,
+    "instances" : 0,
+    "memory" : {
+        "total" : 128,
+        "used" : 0
+    },
+    "restarts" : [
+        
+    ]
+}]

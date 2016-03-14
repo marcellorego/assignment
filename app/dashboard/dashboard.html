@@ -1,0 +1,42 @@
+<div class="row-fluid">
+    
+    <div class="col-sm-3 col-md-2 sidebar">
+        
+        <button data-ng-click="addProcess()">Add Process</button>
+        
+        <ul class="nav nav-sidebar">
+            <li data-ng-class="{'active':pod.active}" data-ng-repeat="pod in pods">
+                <a ng-click="toggleProcess(pod)">Process {{pod.processNumber}}
+                    <span data-ng-if="pod.active" class="sr-only">(current)</span>
+                </a>
+            </li>
+        </ul>
+        
+    </div><!--/span-->
+    
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+        <h1 class="page-header">Dashboard</h1>
+        
+        <div data-ng-if="(pods !== undefined && pods.length)" class="row placeholders">
+            
+            <div class="col-sm-12 col-lg-6 placeholder" data-ng-repeat="pod in pods | filter: isActive">
+              <dockable index="{{$index}}"></dockable>
+            </div>
+            
+        </div>
+        
+        <div data-ng-if="(pods !== undefined && !pods.length)" class="row placeholders">
+            <p>No boards</p>
+        </div>
+        
+        
+            
+            <!--div class="span6" ng-repeat="pod in pods track by $index" data-ng-include="'dockable.html'">
+                
+            </div--><!--/span-->        
+         
+        
+    </div><!--/span-->
+    
+</div><!--/row-->
