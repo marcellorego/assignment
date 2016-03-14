@@ -119,6 +119,10 @@ body {
 }
 
 
+/*
+ * Placeholder dashboard transitions
+ */
+ 
 .placeholder.ng-move,
 .placeholder.ng-enter,
 .placeholder.ng-leave {
@@ -129,15 +133,10 @@ body {
 .placeholder.ng-move,
 .placeholder.ng-enter {
   opacity:0;
-  max-height:0;
 }
 
 .placeholder.ng-leave,
 .placeholder.ng-move.ng-move-active,
 .placeholder.ng-enter.ng-enter-active {
   opacity:1;
-  max-height:30px;
 }
-
-
-

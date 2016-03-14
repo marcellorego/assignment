@@ -86,6 +86,11 @@
     display: none;
 }
 
+.dockable-graph .chart-tooltip {
+    background-color: #1C83C5;
+    opacity: .8;
+}
+
 .dockable-stats {
     height: 100px;
     width: 100%;
