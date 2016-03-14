@@ -2,6 +2,10 @@
  * Base structure
  */
 
+html {
+  overflow-y: scroll;
+}
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
@@ -56,6 +60,11 @@ body {
   margin-left: -20px;
 }
 
+.nav-sidebar > li:first-child {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .nav-sidebar > li {
     cursor: pointer;
 }
@@ -96,7 +105,6 @@ body {
 
 .placeholders {
   margin-bottom: 30px;
-  /*text-align: center;*/
 }
 .placeholders h4 {
   margin-top: 0;
@@ -109,3 +117,27 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+
+.placeholder.ng-move,
+.placeholder.ng-enter,
+.placeholder.ng-leave {
+  transition:all linear 0.5s;
+}
+
+.placeholder.ng-leave.ng-leave-active,
+.placeholder.ng-move,
+.placeholder.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.placeholder.ng-leave,
+.placeholder.ng-move.ng-move-active,
+.placeholder.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}
+
+
+

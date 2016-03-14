@@ -1,9 +1,3 @@
-@import url("/app/components/radial/radial.css");
-
-.dockable-content [class*="span"] {
-    height: 100%;
-}
-
 /* Dockable Content */
 .dockable-content {
     position: relative;
@@ -17,6 +11,10 @@
     -moz-border-radius: .5em;
     
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.dockable-content [class*="span"] {
+    height: 100%;
 }
 
 .dockable-content h4 {
@@ -61,26 +59,47 @@
 }
 
 .dockable-graph {
-    height: 85px;
+    height: 100px;
     width: 100%;
     background-color: #2F333C;
 }
 
-.dockable-graph .first-child { 
+.dockable-graph > div {
+    height: 100%;
+}
+
+/*.dockable-graph div:first-child { 
     background-color: #E8E8E8;
+}*/
+
+.dockable-graph div:nth-of-type(2) {
+    padding: 0;
+    background-color: #1C83C5;
+}
+
+.dockable-graph .chart {
+    height: 100%;
+    width: 100%;
+}
+
+.dockable-graph .chart-legend {
+    display: none;
 }
 
 .dockable-stats {
     height: 100px;
     width: 100%;
     background-color: #E8E8E8;
-    /*background-color: #fff;*/
     
     border-bottom-right-radius: .5em;
     border-bottom-left-radius: .5em;
     
     -moz-border-radius-bottomright: .5em;
     -moz-border-radius-bottomleft: .5em;
+}
+
+.dockable-stats:last-child h1 {
+    margin-bottom: 6px;
 }
 
 .statistics-title {

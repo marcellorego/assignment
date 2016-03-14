@@ -8,8 +8,7 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.dashboard',
   'myApp.uptime',
-  'myApp.radial',
-  'n3-line-chart'
+  'myApp.radial'  
 ]).
 
 constant("serviceConfig", {

@@ -1,80 +1,79 @@
-<style type="text/css" media="screen">
-	@import url("dashboard/dockable.css");
-</style>
- 
 <!-- Dockable Content -->
-<div class="dockable-content">
+<div class="dockable-content" ng-show="pod.active">
   
   <div class="dockable-header">
-    <span class="close" ng-click="toggleProcess(pod)">&#10006;</span>
+    <span class="close" ng-click="toggleProcess(pod); event.stopPropagation();">&#10006;</span>
     <h4>Process <span style='color: #FFFFF;'>{{pod.processNumber}}</span></h4>
   </div>
   
-  <div class="dockable-graph row-fluid">
+  <div class="dockable-content">
     
-    <div class="col-lg-2 first-child">
-        <h5 class="statistics-title">CPU %</h5>
-        <h1 class="statistics-value-default">{{pod.cpu}}</h1>
-    </div>
-    
-    <div class="col-lg-10"> <!--Graph-->
-        <!--h5 class="statistics-title">CPU %</h5>
-        <h1 class="statistics-value-default">{{pod.cpu}}</h1-->
+    <div class="dockable-graph row-fluid ">
         
-        <linechart data="pod.data" options="options" mode="thumbnail" width=""></linechart>
-    </div>
-  </div>
-  
-  <div class="dockable-stats row-fluid">
-     <div class="col-sm-2">
-           <h5 class="statistics-title">Status</h5>
-           <h1 ng-class="{'statistics-value-green':pod.status, 'statistics-value-red':!pod.status}" 
-                class="statistics-value-default">{{pod.status ? 'On' : 'Off'}}</h1> 
-     </div>
-     
-     <div class="col-sm-2">
-        
-        <h5 class="statistics-title">Instances</h5>
-        <h1 class="statistics-value-default">{{pod.instances}}</h1>
-        
-     </div>
-     
-     <div class="col-sm-2">
-        <h5 class="statistics-title">Memory</h5>
-        <div id="memory{{pod.processNumber}}"
-            radial-chart
-            value="pod.memory.used"
-            size="pod.memory.total"
-            width="50"
-            height="50"></div>
-        
-        <!--div radial-value 
-            class="radial"
-            width="50"
-            height="50">
-        </div-->
-            
-        <!--div id="radial{{$index}}">
-            <h1 class="statistics-value-default">{{pod.memory.used}}</h1>
-        </div-->
-     </div>
-     
-     <div class="col-sm-4">
-        <h5 class="statistics-title">Up Time</h5>
-        <h2 class="statistics-value-default statistics-value-orange" 
-            up-time="{{pod.restarts.length ? pod.restarts[0] : ''}}"></h2>
-     </div>
-     
-     <div class="col-sm-2">
-        <h5 class="statistics-title">Restarts</h5>
-        <h1 class="statistics-value-default statistics-value-red">{{pod.restarts.length}}</h1>
-        <div class="dropdown" data-ng-if="(pod.restarts !== undefined && pod.restarts.length)">
-          <a class="dropbtn">&#9660;</a>
-          <div class="dropdown-content">
-            <a href="#/restart/{{$index}}" data-ng-repeat="item in pod.restarts track by $index">{{item | uptimeFormatter}}</a>
-          </div>
+        <div class="col-xs-2">
+            <h5 class="statistics-title">CPU %</h5>
+            <h1 class="statistics-value-default">{{pod.cpu}}</h1>
         </div>
-     </div>
+        
+        <div class="col-xs-10"> <!--Graph-->
+            <!--h5 class="statistics-title">CPU %</h5>
+            <h1 class="statistics-value-default">{{pod.cpu}}</h1-->
+            
+            <linechart data="pod.data" options="options"></linechart>
+        </div>
+    </div>
+    
+    <div class="dockable-stats row-fluid">
+        <div class="col-xs-2 col-sm-2">
+            <h5 class="statistics-title">Status</h5>
+            <h1 ng-class="{'statistics-value-green':pod.status, 'statistics-value-red':!pod.status}" 
+                    class="statistics-value-default">{{pod.status ? 'On' : 'Off'}}</h1> 
+        </div>
+        
+        <div class="col-xs-2 col-sm-2">
+            
+            <h5 class="statistics-title">Instances</h5>
+            <h1 class="statistics-value-default">{{pod.instances}}</h1>
+            
+        </div>
+        
+        <div class="col-xs-2 col-sm-2">
+            <h5 class="statistics-title">Memory</h5>
+            <div id="memory{{pod.processNumber}}"
+                radial-chart
+                value="pod.memory.used"
+                size="pod.memory.total"
+                width="50"
+                height="50"></div>
+            
+            <!--div radial-value 
+                class="radial"
+                width="50"
+                height="50">
+            </div-->
+                
+            <!--div id="radial{{$index}}">
+                <h1 class="statistics-value-default">{{pod.memory.used}}</h1>
+            </div-->
+        </div>
+        
+        <div class="col-xs-4 col-sm-4">
+            <h5 class="statistics-title">Up Time</h5>
+            <h2 class="statistics-value-default statistics-value-orange" 
+                up-time="{{pod.restarts.length ? pod.restarts[0] : ''}}"></h2>
+        </div>
+        
+        <div class="col-xs-2 col-sm-2">
+            <h5 class="statistics-title">Restarts</h5>
+            <h1 class="statistics-value-default statistics-value-red">{{pod.restarts.length}}</h1>
+            <div class="dropdown" data-ng-if="(pod.restarts !== undefined && pod.restarts.length)">
+                <a class="dropbtn">&#9660;</a>
+                <div class="dropdown-content">
+                    <a href="#/restart/{{$index}}" data-ng-repeat="item in pod.restarts track by $index">{{item | uptimeFormatter}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
   
 </div>
